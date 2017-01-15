@@ -32,6 +32,10 @@
     <EmbeddedResource Include="LottoCheckerPage.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIKeys.cs" />
+    <Compile Include="APIKeys.Ignored.cs">
+      <DependentUpon>APIKeys.cs</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>

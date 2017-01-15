@@ -17,8 +17,6 @@ namespace LottoChecker
 {
     public class LottoCheckerViewModel : INotifyPropertyChanged
     {
-        private const string MicrosoftVisionAPIToken = "___________________________";
-
         public ICommand ScanCommand { get; private set; }
 
         private string _result = "";
@@ -41,7 +39,7 @@ namespace LottoChecker
 
         public LottoCheckerViewModel()
         {
-            _ocrClient = new VisionServiceClient(MicrosoftVisionAPIToken);
+            _ocrClient = new VisionServiceClient(ApiKeys.MicrosoftVisionToken);
 			
             ScanCommand = new Command (async () => {
                 Result = "Loading...";

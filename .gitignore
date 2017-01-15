@@ -40,4 +40,6 @@ Thumbs.db
 *.dotCover
 /.idea
 /.droidres
-/Tokens.txt
+
+#
+/LottoChecker/APIKeys.Ignored.cs
