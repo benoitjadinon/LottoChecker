@@ -1,4 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:LottoChecker" x:Class="LottoChecker.LottoCheckerPage">
-    <Button Text="Scan" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding ScanCommand}"/>
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:local="clr-namespace:LottoChecker"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LottoChecker.LottoCheckerPage"
+    >
+    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" >
+        <Button Text="Scan" Command="{Binding ScanCommand}" />
+        <Label Text="{Binding Result}" />		
+    </StackLayout>
 </ContentPage>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LottoChecker.iOS", "iOS\Lot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LottoChecker.Droid", "Droid\LottoChecker.Droid.csproj", "{1D15A241-BFC0-4D20-9D77-5D1D77E9C7EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LottoChecker.Test", "LottoChecker.Test\LottoChecker.Test.csproj", "{3902A89D-623B-4F83-A595-24E6117C5CF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,17 @@ Global
 		{1D15A241-BFC0-4D20-9D77-5D1D77E9C7EA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{1D15A241-BFC0-4D20-9D77-5D1D77E9C7EA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{1D15A241-BFC0-4D20-9D77-5D1D77E9C7EA}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Release|iPhone.Build.0 = Release|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{3902A89D-623B-4F83-A595-24E6117C5CF2}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
