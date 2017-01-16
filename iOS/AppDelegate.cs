@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
+using LottoChecker.Shared;
 
 namespace LottoChecker.iOS
 {
@@ -14,8 +16,9 @@ namespace LottoChecker.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 
-			LoadApplication(new App());
+			DependencyService.Register<IBitmapTools, BitmapTools>();
 
+			LoadApplication(new App());
 			return base.FinishedLaunching(app, options);
 		}
 	}

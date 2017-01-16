@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LottoChecker.Droid", "Droid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LottoChecker.Test", "LottoChecker.Test\LottoChecker.Test.csproj", "{3902A89D-623B-4F83-A595-24E6117C5CF2}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LottoChecker.Shared", "LottoChecker.Shared\LottoChecker.Shared.shproj", "{696284C4-24B7-4146-BD8E-FCAA8F7F1C4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

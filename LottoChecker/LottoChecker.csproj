@@ -39,6 +39,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IBitmapTools.cs" />
     <Compile Include="LottoCheckerPage.xaml.cs">
       <DependentUpon>LottoCheckerPage.xaml</DependentUpon>
     </Compile>

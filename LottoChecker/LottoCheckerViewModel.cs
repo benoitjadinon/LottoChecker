@@ -34,12 +34,16 @@ namespace LottoChecker
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly VisionServiceClient _ocrClient;
-        private bool _isInitialized = false;
+		private readonly IBitmapTools _bitmapTools;
+  
+		private bool _isInitialized = false;
 
 
-        public LottoCheckerViewModel()
+		public LottoCheckerViewModel(IBitmapTools bitmapTools)
         {
             _ocrClient = new VisionServiceClient(ApiKeys.MicrosoftVisionToken);
+
+			_bitmapTools = bitmapTools;
 			
             ScanCommand = new Command (async () => {
                 Result = "Loading...";
@@ -89,12 +93,19 @@ namespace LottoChecker
                 photo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
                 {
                     SaveToAlbum = false,
+                    AllowCropping = true,
                 });
             else
                 photo = await CrossMedia.Current.PickPhotoAsync();
 
-            using (var photoStream = photo.GetStream()){
-                //TODO : reduce photo before, because 413 req entity too large
+			long weight;
+            while ((weight = _bitmapTools.GetImageWeight(photo.Path)) > 4000000)
+            {
+                _bitmapTools.ResizeImage(photo.Path, photo.Path, 0.8f);
+            }
+
+            using (var photoStream = photo.GetStream())
+			{
                 return await RecognizeNumberLines(photoStream);
             }
 
@@ -117,8 +128,7 @@ namespace LottoChecker
                 from region in ocrResult.Regions
                 from lines in region.Lines
                 where lines.Words.Length >= 6
-                select lines.Words.Where(word => IsNumeric(word.Text))
-                    .Select(word => word.Text)
+                select lines.Words.Select(word => word.Text).Where(IsNumeric)
                     .Select(v => Convert.ToInt32(v))
                     .ToArray()
             ;

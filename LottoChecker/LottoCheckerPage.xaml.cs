@@ -15,7 +15,9 @@ namespace LottoChecker
 		{
 			base.OnAppearing();
 
-		    this.BindingContext = new LottoCheckerViewModel();
+			var bitmapTools = DependencyService.Get<IBitmapTools>();
+
+		    this.BindingContext = new LottoCheckerViewModel(bitmapTools);
 		}
 	}
 }

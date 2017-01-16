@@ -8,10 +8,19 @@ namespace LottoChecker.Test
 	[TestFixture()]
 	public class Test
 	{
+		IBitmapTools _bitmapTools;
+		
+		[TestFixtureSetUp] 
+		public void Setup()
+    	{
+			_bitmapTools = new FakeBitmapTools();
+		}
+
+		
 		[Test()]
 		public void TestHasAWinningLine()
 		{
-			var vm = new LottoCheckerViewModel();
+			var vm = new LottoCheckerViewModel(_bitmapTools);
 
 			var winningNumbers = new int[] { 18, 21, 26, 39, 42, 43 };
 			var playedLines = new List<int[]>
@@ -26,7 +35,7 @@ namespace LottoChecker.Test
 	    [Test()]
 	    public void TestHasNoWinningLine()
 	    {
-	        var vm = new LottoCheckerViewModel();
+	        var vm = new LottoCheckerViewModel(_bitmapTools);
 
 	        var winningNumbers = new int[] { 18, 21, 26, 39, 42, 43 };
 	        var playedLines = new List<int[]>
@@ -41,7 +50,7 @@ namespace LottoChecker.Test
 	    [Test()]
 	    public void TestHasOnlyTwoNumbers()
 	    {
-	        var vm = new LottoCheckerViewModel();
+	        var vm = new LottoCheckerViewModel(_bitmapTools);
 
 	        var winningNumbers = new int[] { 18, 21, 26, 39, 42, 43 };
 	        var playedLines = new List<int[]>
@@ -57,7 +66,7 @@ namespace LottoChecker.Test
 	    [Test()]
 	    public void TestExtractNumbers()
 	    {
-	        var vm = new LottoCheckerViewModel();
+	        var vm = new LottoCheckerViewModel(_bitmapTools);
 
 	        var results = new OcrResults
 	        {
@@ -108,5 +117,13 @@ namespace LottoChecker.Test
 
 	        Assert.AreEqual(expectedLines, vm.ExtractNumbers(results));
 	    }
+
+
+
+		class FakeBitmapTools : IBitmapTools
+		{
+			public void ResizeImage(string sourceFile, string targetFile, float ratio){}
+			public long GetImageWeight(string sourceFile){ return 0; }
+		}
 	}
 }
