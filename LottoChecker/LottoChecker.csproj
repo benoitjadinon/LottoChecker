@@ -43,6 +43,8 @@
     </Compile>
     <Compile Include="LottoCheckerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LottoService.cs" />
+    <Compile Include="LottoResults.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

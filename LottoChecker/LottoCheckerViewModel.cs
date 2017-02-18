@@ -1,134 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using System.Xml;
-using System.Xml.Linq;
 using Microsoft.ProjectOxford.Vision;
 using Microsoft.ProjectOxford.Vision.Contract;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Reactive.Bindings;
-using Xamarin.Forms;
+using System.Reactive.Linq;
+using Reactive.Bindings.Interactivity;
 
 namespace LottoChecker
 {
 	public class LottoCheckerViewModel
 	{
-		private readonly VisionServiceClient _ocrClient;
-		private readonly IBitmapTools _bitmapTools;
-
-		private bool _isInitialized = false;
-
+		private readonly LottoService _lottoService;
 
 		public LottoCheckerViewModel(IBitmapTools bitmapTools)
 		{
-			_ocrClient = new VisionServiceClient(ApiKeys.MicrosoftVisionToken);
+			_lottoService = new LottoService(bitmapTools);
 
-			_bitmapTools = bitmapTools;
+			ResultsDate = _lottoService.Results
+			                           .ObserveOn(ReactivePropertyScheduler.Default)
+			                           .Select(d => d.PublishDate.ToString("dddd d-M-yyyy"))
+			                           .ToReadOnlyReactiveProperty("?-?-?");
 
-			ScanCommand = new Command(async () =>
-			{
-				Result.Value = "Loading...";
-				Result.Value = await ScanAsync() ? "Winning ticket !" : "Lost.";
-			}, () => true);
-		}
-
-		public ICommand ScanCommand { get; private set; }
-
-		public ReactiveProperty<string> Result { get; } = new ReactiveProperty<string>();
-
-
-
-		private async Task<bool> ScanAsync()
-		{
-			var winningNumbers = await LoadResultsAsync();
-			var scannedNumberLines = await ScanTicketAsync();
-
-			return IsTicketWinning(winningNumbers, scannedNumberLines);
-		}
-
-		public bool IsTicketWinning(int[] winningNumbers, IEnumerable<int[]> scannedNumberLines)
-			=> scannedNumberLines.Any(line => line.Count(winningNumbers.Contains) >= 3);
-
-		private Task<int[]> LoadResultsAsync()
-		{
-			return Task.Run(() =>
-			{
-				var xmlDoc = XDocument.Load("https://www.e-lotto.be/cache/dgLastResultForGameWithAddons/FR/Lotto6.xml");
-				return xmlDoc.Root
-						.Element("gameevent")
-						.Element("gamedraws")
-						.Elements("gamedraw")
-						.First()
-						.Element("resultsets")
-						.Elements("resultset")
-						.First()
-						.Element("mainvalues")
-						.Value
-						.Split(',')
-						.Select(XmlConvert.ToInt32)
-						.ToArray()
-					;
-			});
-		}
-
-		private async Task<IEnumerable<int[]>> ScanTicketAsync()
-		{
-			if (!_isInitialized)
-				_isInitialized = await CrossMedia.Current.Initialize();
-
-			MediaFile photo;
-			if (CrossMedia.Current.IsCameraAvailable)
-				photo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+			ScanCommand = new AsyncReactiveCommand();
+			ScanCommand
+				.Subscribe(async _ =>
 				{
-					SaveToAlbum = false,
-					AllowCropping = true,
-				});
-			else
-				photo = await CrossMedia.Current.PickPhotoAsync();
-
-			long weight;
-			while ((weight = _bitmapTools.GetImageWeight(photo.Path)) > 4000000)
-			{
-				_bitmapTools.ResizeImage(photo.Path, photo.Path, 0.8f);
-			}
-
-			using (var photoStream = photo.GetStream())
-			{
-				return await RecognizeNumberLines(photoStream);
-			}
-
-			//return await Recognize("https://goo.gl/photos/PS6nHuH8Y7LW2oWc6");
+					IsLoading.Value = true;
+					Result.Value = "Loading...";
+					Result.Value = await _lottoService.ScanAsync() ? "Winning ticket !" : "Lost.";
+					IsLoading.Value = false;
+				}
+        	);
 		}
 
-		private async Task<IEnumerable<int[]>> RecognizeNumberLines(Stream stream)
-		{
-			return ExtractNumbers(await _ocrClient.RecognizeTextAsync(stream));
-		}
 
-		private async Task<IEnumerable<int[]>> RecognizeNumberLines(string url)
-		{
-			return ExtractNumbers(await _ocrClient.RecognizeTextAsync(url));
-		}
+		public AsyncReactiveCommand ScanCommand { get; private set; }
 
-		public IEnumerable<int[]> ExtractNumbers(OcrResults ocrResult)
-		{
-			return
-				from region in ocrResult.Regions
-				from lines in region.Lines
-				where lines.Words.Length >= 6
-				select lines.Words.Select(word => word.Text)
-					.Where(IsNumeric)
-					.Select(v => Convert.ToInt32(v))
-					.ToArray()
-				;
-		}
-
-		private readonly Func<string, bool> IsNumeric =
-			x => !string.IsNullOrEmpty(x) && x.ToCharArray().All(char.IsDigit);
+		public ReactiveProperty<bool> IsLoading => new ReactiveProperty<bool>();
+		public ReactiveProperty<string> Result => new ReactiveProperty<string>();
+		public ReadOnlyReactiveProperty<string> ResultsDate { get; }
 	}
 }
