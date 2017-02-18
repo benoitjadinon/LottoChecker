@@ -27,6 +27,8 @@ namespace LottoChecker.Droid
 		public static void UpdateIdValues()
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LottoChecker.Droid.Resource.Attribute.actionBarSize;
+			global::Reactive.Bindings.Resource.String.ApplicationName = global::LottoChecker.Droid.Resource.String.ApplicationName;
+			global::Reactive.Bindings.Resource.String.Hello = global::LottoChecker.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -2936,6 +2938,12 @@ namespace LottoChecker.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f060027
+			public const int ApplicationName = 2131099687;
+			
+			// aapt resource value: 0x7f060026
+			public const int Hello = 2131099686;
 			
 			// aapt resource value: 0x7f060012
 			public const int abc_action_bar_home_description = 2131099666;

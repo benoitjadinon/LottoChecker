@@ -7,6 +7,6 @@
     >
     <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" >
         <Button Text="Scan" Command="{Binding ScanCommand}" />
-        <Label Text="{Binding Result}" />		
+        <Label Text="{Binding Result}" />
     </StackLayout>
 </ContentPage>

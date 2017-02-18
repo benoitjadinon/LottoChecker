@@ -11,31 +11,13 @@ using Microsoft.ProjectOxford.Vision;
 using Microsoft.ProjectOxford.Vision.Contract;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Reactive.Bindings;
 using Xamarin.Forms;
 
 namespace LottoChecker
 {
-	public class LottoCheckerViewModel : INotifyPropertyChanged
+	public class LottoCheckerViewModel
 	{
-		public ICommand ScanCommand { get; private set; }
-
-		private string _result = "";
-
-		public string Result
-		{
-			get { return _result; }
-			private set
-			{
-				_result = value;
-				NotifyPropertyChanged(nameof(Result));
-			}
-		}
-
-		private void NotifyPropertyChanged(string propertyName)
-			=> PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-		public event PropertyChangedEventHandler PropertyChanged;
-
 		private readonly VisionServiceClient _ocrClient;
 		private readonly IBitmapTools _bitmapTools;
 
@@ -50,10 +32,15 @@ namespace LottoChecker
 
 			ScanCommand = new Command(async () =>
 			{
-				Result = "Loading...";
-				Result = await ScanAsync() ? "Winning ticket !" : "Lost.";
+				Result.Value = "Loading...";
+				Result.Value = await ScanAsync() ? "Winning ticket !" : "Lost.";
 			}, () => true);
 		}
+
+		public ICommand ScanCommand { get; private set; }
+
+		public ReactiveProperty<string> Result { get; } = new ReactiveProperty<string>();
+
 
 
 		private async Task<bool> ScanAsync()

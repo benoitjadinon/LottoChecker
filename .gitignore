@@ -43,3 +43,4 @@ Thumbs.db
 
 #
 /LottoChecker/APIKeys.Ignored.cs
+*.bak
