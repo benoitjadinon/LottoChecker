@@ -1,48 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.ProjectOxford.Vision;
-using Microsoft.ProjectOxford.Vision.Contract;
-using Plugin.Media;
-using Plugin.Media.Abstractions;
+﻿using System.Linq;
 using Reactive.Bindings;
 using System.Reactive.Linq;
-using Reactive.Bindings.Interactivity;
 
 namespace LottoChecker
 {
 	public class LottoCheckerViewModel
 	{
-		private readonly LottoService _lottoService;
+		private readonly LottoCheckerService _lottoCheckerService;
+
 
 		public LottoCheckerViewModel(IBitmapTools bitmapTools)
 		{
-			_lottoService = new LottoService(bitmapTools);
+			var lotteryService = new LottoService();
+			_lottoCheckerService = new LottoCheckerService(lotteryService, bitmapTools);
 
-			ResultsDate = _lottoService.Results
-			                           .ObserveOn(ReactivePropertyScheduler.Default)
-			                           .Select(d => d.PublishDate.ToString("dddd d-M-yyyy"))
-			                           .ToReadOnlyReactiveProperty("?-?-?");
+			ResultsDate = lotteryService.Results
+						  .ObserveOn(ReactivePropertyScheduler.Default)
+						  .Select(d => d.PublishDate.ToString("dddd d-M-yyyy"))
+						  .ToReadOnlyReactiveProperty("loading results...")
+                          ;
 
-			ScanCommand = new AsyncReactiveCommand();
-			ScanCommand
-				.Subscribe(async _ =>
-				{
-					IsLoading.Value = true;
-					Result.Value = "Loading...";
-					Result.Value = await _lottoService.ScanAsync() ? "Winning ticket !" : "Lost.";
-					IsLoading.Value = false;
-				}
-        	);
+			ScanCommand = new AsyncReactiveCommand<bool>();
+			/*IsLoading = ScanCommand.CanExecuteChangedAsObservable()
+					   .Select(_ => ScanCommand.CanExecute())
+					   .ToReadOnlyReactiveProperty();
+					   */
+			ScanCommand.Subscribe(async _ => 
+			                      Result.Value = (await _lottoCheckerService.ScanTicketAsync(new System.Threading.CancellationToken())) ? "win!" : "nope.");
+
+			/***
+			ScanCommand = _lottoCheckerService.Load().ToReactiveCommand<bool>();
+            ScanCommand.Select(b => b ? "win!" : "nope.")
+			           .Subscribe(onNext:s => Result.Value = s);
+			           */
 		}
 
 
-		public AsyncReactiveCommand ScanCommand { get; private set; }
-
-		public ReactiveProperty<bool> IsLoading => new ReactiveProperty<bool>();
-		public ReactiveProperty<string> Result => new ReactiveProperty<string>();
 		public ReadOnlyReactiveProperty<string> ResultsDate { get; }
+
+		public AsyncReactiveCommand<bool> ScanCommand { get; private set; }
+		//public ReadOnlyReactiveProperty<bool> IsLoading { get; private set; }
+		public ReactiveProperty<string> Result { get; }// = new ReactiveProperty<string>();
 	}
 }

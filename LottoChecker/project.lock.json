@@ -816,6 +816,17 @@
           "lib/portable-net45+win8+wp8+wpa81/_._": {}
         }
       },
+      "Xam.Plugin.Connectivity/2.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.Abstractions.dll": {},
+          "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.dll": {}
+        }
+      },
       "Xam.Plugin.Media/2.6.3.6-beta": {
         "type": "package",
         "compile": {
@@ -3865,6 +3876,68 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "Xam.Plugin.Connectivity/2.3.0": {
+      "sha512": "Lo9kX32BsI3t4Xsqgl2NPKp9INu577C1MH11tHUbw+kfV/1E+UKMgHjkDkDGO/bEzP/cXfCjAoPOVx1rIBO7uQ==",
+      "type": "package",
+      "path": "xam.plugin.connectivity/2.3.0",
+      "files": [
+        "Xam.Plugin.Connectivity.2.3.0.nupkg.sha512",
+        "Xam.Plugin.Connectivity.nuspec",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Connectivity.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.Connectivity.dll",
+        "lib/MonoAndroid10/Plugin.Connectivity.pdb",
+        "lib/MonoAndroid10/Plugin.Connectivity.xml",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.dll",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.pdb",
+        "lib/UAP10/Plugin.Connectivity.Abstractions.xml",
+        "lib/UAP10/Plugin.Connectivity.dll",
+        "lib/UAP10/Plugin.Connectivity.pdb",
+        "lib/UAP10/Plugin.Connectivity.xml",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.dll",
+        "lib/Xamarin.iOS10/Plugin.Connectivity.xml",
+        "lib/net45/Plugin.Connectivity.Abstractions.dll",
+        "lib/net45/Plugin.Connectivity.Abstractions.pdb",
+        "lib/net45/Plugin.Connectivity.Abstractions.xml",
+        "lib/net45/Plugin.Connectivity.dll",
+        "lib/net45/Plugin.Connectivity.pdb",
+        "lib/net45/Plugin.Connectivity.xml",
+        "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.Abstractions.dll",
+        "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.Abstractions.pdb",
+        "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.Abstractions.xml",
+        "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.dll",
+        "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.pdb",
+        "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.xml",
+        "lib/win8/Plugin.Connectivity.Abstractions.dll",
+        "lib/win8/Plugin.Connectivity.Abstractions.pdb",
+        "lib/win8/Plugin.Connectivity.Abstractions.xml",
+        "lib/win8/Plugin.Connectivity.dll",
+        "lib/win8/Plugin.Connectivity.pdb",
+        "lib/win8/Plugin.Connectivity.xml",
+        "lib/wp80/Plugin.Connectivity.Abstractions.dll",
+        "lib/wp80/Plugin.Connectivity.Abstractions.pdb",
+        "lib/wp80/Plugin.Connectivity.Abstractions.xml",
+        "lib/wp80/Plugin.Connectivity.dll",
+        "lib/wp80/Plugin.Connectivity.pdb",
+        "lib/wp80/Plugin.Connectivity.xml",
+        "lib/wp81/Plugin.Connectivity.Abstractions.dll",
+        "lib/wp81/Plugin.Connectivity.Abstractions.pdb",
+        "lib/wp81/Plugin.Connectivity.Abstractions.xml",
+        "lib/wp81/Plugin.Connectivity.dll",
+        "lib/wp81/Plugin.Connectivity.pdb",
+        "lib/wp81/Plugin.Connectivity.xml",
+        "lib/wpa81/Plugin.Connectivity.Abstractions.dll",
+        "lib/wpa81/Plugin.Connectivity.Abstractions.pdb",
+        "lib/wpa81/Plugin.Connectivity.Abstractions.xml",
+        "lib/wpa81/Plugin.Connectivity.dll",
+        "lib/wpa81/Plugin.Connectivity.pdb",
+        "lib/wpa81/Plugin.Connectivity.xml",
+        "readme.txt"
+      ]
+    },
     "Xam.Plugin.Media/2.6.3.6-beta": {
       "sha512": "vZkEc8zmdF7ijCTM2sp0uHJ4wIoxa2D2FlJZka6XVSd2ewRjlOP6skd52Zv+Kc+zD1wV3/Fr0R68LLTkFy4cHg==",
       "type": "package",
@@ -4091,6 +4164,7 @@
       "NETStandard.Library >= 1.6.1",
       "Newtonsoft.Json >= 9.0.2-beta2",
       "ReactiveProperty >= 3.5.0",
+      "Xam.Plugin.Connectivity >= 2.3.0",
       "Xam.Plugin.Media >= 2.6.3.6-beta",
       "Xamarin.Forms >= 2.3.4.192-pre2"
     ],
@@ -4114,7 +4188,11 @@
       "Newtonsoft.Json": "9.0.2-beta2",
       "ReactiveProperty": "3.5.0",
       "Xam.Plugin.Media": "2.6.3.6-beta",
-      "Xamarin.Forms": "2.3.4.192-pre2"
+      "Xamarin.Forms": "2.3.4.192-pre2",
+      "Xam.Plugin.Connectivity": {
+        "target": "Package",
+        "version": "[2.3.0, )"
+      }
     },
     "frameworks": {
       "netstandard1.2": {
