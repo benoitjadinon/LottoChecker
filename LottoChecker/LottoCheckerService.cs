@@ -43,15 +43,15 @@ namespace LottoChecker
 			_refreshSubject = new Subject<bool>();
 		}
 
+
 		internal IObservable<bool> Load()
 		{
 			return Observable.FromAsync(ct => ScanTicketAsync(ct))
-								 .Where(l => l != null)
-								 .CombineLatest(_lottoService.Results,
-												(scannedNumberLines, winningNumbers)
-													=> IsTicketWinning(winningNumbers.NumberLines, scannedNumberLines)
-											   )
-								 ;
+							 .Where(l => l != null)
+							 .CombineLatest(_lottoService.Results,
+											(scannedNumberLines, winningNumbers)
+												=> IsTicketWinning(winningNumbers.NumberLines, scannedNumberLines)
+						     );
 		}
 
 		public bool IsTicketWinning(int[] winningNumbers, IEnumerable<int[]> scannedNumberLines)
@@ -83,22 +83,16 @@ namespace LottoChecker
 			}
 
 			using (var photoStream = photo.GetStream())
-			{
 				return await RecognizeNumberLines(photoStream);
-			}
 
 			//return await Recognize("https://goo.gl/photos/PS6nHuH8Y7LW2oWc6");
 		}
 
 		private async Task<IEnumerable<int[]>> RecognizeNumberLines(Stream stream)
-		{
-			return ExtractNumbers(await _ocrClient.RecognizeTextAsync(stream));
-		}
+			=> ExtractNumbers(await _ocrClient.RecognizeTextAsync(stream));
 
 		private async Task<IEnumerable<int[]>> RecognizeNumberLines(string url)
-		{
-			return ExtractNumbers(await _ocrClient.RecognizeTextAsync(url));
-		}
+			=> ExtractNumbers(await _ocrClient.RecognizeTextAsync(url));
 
 		public IEnumerable<int[]> ExtractNumbers(OcrResults ocrResult)
 		{

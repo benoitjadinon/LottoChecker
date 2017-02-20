@@ -16,7 +16,7 @@ namespace LottoChecker.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 
-			DependencyService.Register<IBitmapTools, BitmapTools>();
+			new AppDependencies().Setup();
 
 			LoadApplication(new App());
 			return base.FinishedLaunching(app, options);

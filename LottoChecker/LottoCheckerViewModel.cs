@@ -20,15 +20,19 @@ namespace LottoChecker
 						  .ToReadOnlyReactiveProperty("loading results...")
                           ;
 
-			ScanCommand = new AsyncReactiveCommand<bool>();
+			ScanCommand = lotteryService.Results
+										.Select(_ => true)
+										.ToAsyncReactiveCommand()
+			                            ;
 			/*IsLoading = ScanCommand.CanExecuteChangedAsObservable()
 					   .Select(_ => ScanCommand.CanExecute())
 					   .ToReadOnlyReactiveProperty();
 					   */
-			ScanCommand.Subscribe(async _ => 
-			                      Result.Value = (await _lottoCheckerService.ScanTicketAsync(new System.Threading.CancellationToken())) ? "win!" : "nope.");
+			ScanCommand
+			           .Subscribe(_ => _lottoCheckerService.ScanTicketAsync(new System.Threading.CancellationToken()))
+			           ;
 
-			/***
+			/*
 			ScanCommand = _lottoCheckerService.Load().ToReactiveCommand<bool>();
             ScanCommand.Select(b => b ? "win!" : "nope.")
 			           .Subscribe(onNext:s => Result.Value = s);
@@ -38,7 +42,7 @@ namespace LottoChecker
 
 		public ReadOnlyReactiveProperty<string> ResultsDate { get; }
 
-		public AsyncReactiveCommand<bool> ScanCommand { get; private set; }
+		public AsyncReactiveCommand ScanCommand { get; private set; }
 		//public ReadOnlyReactiveProperty<bool> IsLoading { get; private set; }
 		public ReactiveProperty<string> Result { get; }// = new ReactiveProperty<string>();
 	}

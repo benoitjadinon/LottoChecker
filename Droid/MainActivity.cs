@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using LottoChecker.Shared;
 
 namespace LottoChecker.Droid
 {
@@ -19,6 +20,8 @@ namespace LottoChecker.Droid
 			ToolbarResource = Resource.Layout.Toolbar;
 
 			base.OnCreate(bundle);
+
+			new AppDependencies().Setup();
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 

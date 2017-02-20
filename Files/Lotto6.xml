@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gameresult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <gameevent>
+        <game>
+            <iddggame>61</iddggame>
+            <iddggametype>lotto</iddggametype>
+            <externalId>Lotto6</externalId>
+            <name>Lotto</name>
+            <description>Lotto</description>
+            <state>ACTIVE</state>
+            <issubscriptionsallowed>-1</issubscriptionsallowed>
+            <openTime>2017-02-18T19:30:00</openTime>
+            <closeTime>2017-02-22T19:00:00</closeTime>
+            <revision>106</revision>
+        </game>
+        <iddggameevent>28891</iddggameevent>
+        <iddggame>61</iddggame>
+        <drawnumber>563</drawnumber>
+        <drawdate>2017-02-18T00:00:00</drawdate>
+        <seriesid>main</seriesid>
+        <name>Lotto draw</name>
+        <state>PROCESSED</state>
+        <iddggamedraw_main>29009</iddggamedraw_main>
+        <salesopentime>2017-02-15T19:30:00</salesopentime>
+        <wagerclosetime>2017-02-18T18:59:59</wagerclosetime>
+        <drawclosetime>2017-02-18T19:00:00</drawclosetime>
+        <cancelclosetime>2017-02-18T18:59:59</cancelclosetime>
+        <resulttime>2017-02-18T20:02:28</resulttime>
+        <isopenforwager>0</isopenforwager>
+        <isopenforcancel>0</isopenforcancel>
+        <areresultsetsvisible>-1</areresultsetsvisible>
+        <areresultdivisionsvisible>-1</areresultdivisionsvisible>
+        <gamedraws>
+            <gamedraw>
+                <iddggamedraw>29009</iddggamedraw>
+                <iddggameevent>28891</iddggameevent>
+                <drawid>0</drawid>
+                <name>Simple</name>
+                <rolloveramount>0</rolloveramount>
+                <isrolldownpossible>0</isrolldownpossible>
+                <actualjackpot>0</actualjackpot>
+                <estimatedjackpot>1000000</estimatedjackpot>
+                <guaranteedjackpot>1000000</guaranteedjackpot>
+                <boostedjackpot>0</boostedjackpot>
+                <totalprizeamount>1000000</totalprizeamount>
+                <totalguaranteedjackpot>1000000</totalguaranteedjackpot>
+                <jackpotwinners>0</jackpotwinners>
+                <quickpickwinners xsi:nil="true" />
+                <tsresult>2017-02-18T20:02:28</tsresult>
+                <jackpotdivisionlevelid>1</jackpotdivisionlevelid>
+                <resultsets>
+                    <resultset>
+                        <setid>1</setid>
+                        <mainvalues>3,27,28,33,40,41</mainvalues>
+                        <bonusvalues>38</bonusvalues>
+                    </resultset>
+                </resultsets>
+                <resultdivisions>
+                    <resultdivision>
+                        <levelid>1</levelid>
+                        <name>  6</name>
+                        <shares>0</shares>
+                        <prizetype>PARI_MUTUEL</prizetype>
+                        <prizeamount>0</prizeamount>
+                        <totalshares xsi:nil="true" />
+                    </resultdivision>
+                    <resultdivision>
+                        <levelid>2</levelid>
+                        <name>5+1</name>
+                        <shares>1</shares>
+                        <prizetype>PARI_MUTUEL</prizetype>
+                        <prizeamount>177825</prizeamount>
+                        <totalshares xsi:nil="true" />
+                    </resultdivision>
+                    <resultdivision>
+                        <levelid>3</levelid>
+                        <name>  5</name>
+                        <shares>92</shares>
+                        <prizetype>PARI_MUTUEL</prizetype>
+                        <prizeamount>1833.3</prizeamount>
+                        <totalshares xsi:nil="true" />
+                    </resultdivision>
+                    <resultdivision>
+                        <levelid>4</levelid>
+                        <name>4+1</name>
+                        <shares>283</shares>
+                        <prizetype>PARI_MUTUEL</prizetype>
+                        <prizeamount>298</prizeamount>
+                        <totalshares xsi:nil="true" />
+                    </resultdivision>
+                    <resultdivision>
+                        <levelid>5</levelid>
+                        <name>  4</name>
+                        <shares>5821</shares>
+                        <prizetype>PARI_MUTUEL</prizetype>
+                        <prizeamount>26.8</prizeamount>
+                        <totalshares xsi:nil="true" />
+                    </resultdivision>
+                    <resultdivision>
+                        <levelid>6</levelid>
+                        <name>3+1</name>
+                        <shares>8811</shares>
+                        <prizetype>PARI_MUTUEL</prizetype>
+                        <prizeamount>9.4</prizeamount>
+                        <totalshares xsi:nil="true" />
+                    </resultdivision>
+                    <resultdivision>
+                        <levelid>7</levelid>
+                        <name>  3</name>
+                        <shares>103172</shares>
+                        <prizetype>FIXED</prizetype>
+                        <prizeamount>5</prizeamount>
+                        <totalshares xsi:nil="true" />
+                    </resultdivision>
+                    <resultdivision>
+                        <levelid>8</levelid>
+                        <name>2+1</name>
+                        <shares>80749</shares>
+                        <prizetype>FIXED</prizetype>
+                        <prizeamount>3</prizeamount>
+                        <totalshares xsi:nil="true" />
+                    </resultdivision>
+                </resultdivisions>
+                <topWinAmount>0</topWinAmount>
+            </gamedraw>
+        </gamedraws>
+        <maindraw>
+            <iddggamedraw>29009</iddggamedraw>
+            <iddggameevent>28891</iddggameevent>
+            <drawid>0</drawid>
+            <name>Simple</name>
+            <rolloveramount>0</rolloveramount>
+            <isrolldownpossible>0</isrolldownpossible>
+            <actualjackpot>0</actualjackpot>
+            <estimatedjackpot>1000000</estimatedjackpot>
+            <guaranteedjackpot>1000000</guaranteedjackpot>
+            <boostedjackpot>0</boostedjackpot>
+            <totalprizeamount>1000000</totalprizeamount>
+            <totalguaranteedjackpot>1000000</totalguaranteedjackpot>
+            <jackpotwinners>0</jackpotwinners>
+            <quickpickwinners xsi:nil="true" />
+            <tsresult>2017-02-18T20:02:28</tsresult>
+            <jackpotdivisionlevelid>1</jackpotdivisionlevelid>
+            <resultsets>
+                <resultset>
+                    <setid>1</setid>
+                    <mainvalues>3,27,28,33,40,41</mainvalues>
+                    <bonusvalues>38</bonusvalues>
+                </resultset>
+            </resultsets>
+            <resultdivisions>
+                <resultdivision>
+                    <levelid>1</levelid>
+                    <name>  6</name>
+                    <shares>0</shares>
+                    <prizetype>PARI_MUTUEL</prizetype>
+                    <prizeamount>0</prizeamount>
+                    <totalshares xsi:nil="true" />
+                </resultdivision>
+                <resultdivision>
+                    <levelid>2</levelid>
+                    <name>5+1</name>
+                    <shares>1</shares>
+                    <prizetype>PARI_MUTUEL</prizetype>
+                    <prizeamount>177825</prizeamount>
+                    <totalshares xsi:nil="true" />
+                </resultdivision>
+                <resultdivision>
+                    <levelid>3</levelid>
+                    <name>  5</name>
+                    <shares>92</shares>
+                    <prizetype>PARI_MUTUEL</prizetype>
+                    <prizeamount>1833.3</prizeamount>
+                    <totalshares xsi:nil="true" />
+                </resultdivision>
+                <resultdivision>
+                    <levelid>4</levelid>
+                    <name>4+1</name>
+                    <shares>283</shares>
+                    <prizetype>PARI_MUTUEL</prizetype>
+                    <prizeamount>298</prizeamount>
+                    <totalshares xsi:nil="true" />
+                </resultdivision>
+                <resultdivision>
+                    <levelid>5</levelid>
+                    <name>  4</name>
+                    <shares>5821</shares>
+                    <prizetype>PARI_MUTUEL</prizetype>
+                    <prizeamount>26.8</prizeamount>
+                    <totalshares xsi:nil="true" />
+                </resultdivision>
+                <resultdivision>
+                    <levelid>6</levelid>
+                    <name>3+1</name>
+                    <shares>8811</shares>
+                    <prizetype>PARI_MUTUEL</prizetype>
+                    <prizeamount>9.4</prizeamount>
+                    <totalshares xsi:nil="true" />
+                </resultdivision>
+                <resultdivision>
+                    <levelid>7</levelid>
+                    <name>  3</name>
+                    <shares>103172</shares>
+                    <prizetype>FIXED</prizetype>
+                    <prizeamount>5</prizeamount>
+                    <totalshares xsi:nil="true" />
+                </resultdivision>
+                <resultdivision>
+                    <levelid>8</levelid>
+                    <name>2+1</name>
+                    <shares>80749</shares>
+                    <prizetype>FIXED</prizetype>
+                    <prizeamount>3</prizeamount>
+                    <totalshares xsi:nil="true" />
+                </resultdivision>
+            </resultdivisions>
+            <topWinAmount>0</topWinAmount>
+        </maindraw>
+    </gameevent>
+    <addonresults>
+        <addonresult>
+            <gameevent>
+                <game>
+                    <iddggame>89</iddggame>
+                    <iddggametype>joker</iddggametype>
+                    <externalId>JokerPlus</externalId>
+                    <name>Joker+</name>
+                    <description>Joker Plus game</description>
+                    <state>ACTIVE</state>
+                    <issubscriptionsallowed>-1</issubscriptionsallowed>
+                    <openTime>2017-02-19T13:00:00</openTime>
+                    <closeTime>2017-02-20T19:00:00</closeTime>
+                    <revision>103</revision>
+                </game>
+                <iddggameevent>28233</iddggameevent>
+                <iddggame>89</iddggame>
+                <drawnumber>1569</drawnumber>
+                <drawdate>2017-02-18T00:00:00</drawdate>
+                <seriesid>main</seriesid>
+                <name>Joker+ draw</name>
+                <state>PROCESSED</state>
+                <iddggamedraw_main>28352</iddggamedraw_main>
+                <salesopentime>2017-02-17T20:00:00</salesopentime>
+                <wagerclosetime>2017-02-18T18:59:59</wagerclosetime>
+                <drawclosetime>2017-02-18T19:00:00</drawclosetime>
+                <cancelclosetime>2017-02-18T18:59:59</cancelclosetime>
+                <resulttime>2017-02-18T20:00:28</resulttime>
+                <isopenforwager>0</isopenforwager>
+                <isopenforcancel>0</isopenforcancel>
+                <areresultsetsvisible>-1</areresultsetsvisible>
+                <areresultdivisionsvisible>-1</areresultdivisionsvisible>
+                <gamedraws>
+                    <gamedraw>
+                        <iddggamedraw>28352</iddggamedraw>
+                        <iddggameevent>28233</iddggameevent>
+                        <drawid>0</drawid>
+                        <name>Joker+</name>
+                        <rolloveramount>0</rolloveramount>
+                        <isrolldownpossible>0</isrolldownpossible>
+                        <actualjackpot>0</actualjackpot>
+                        <estimatedjackpot>400000</estimatedjackpot>
+                        <guaranteedjackpot xsi:nil="true" />
+                        <boostedjackpot xsi:nil="true" />
+                        <totalprizeamount>178750</totalprizeamount>
+                        <totalguaranteedjackpot>0</totalguaranteedjackpot>
+                        <jackpotwinners>0</jackpotwinners>
+                        <quickpickwinners xsi:nil="true" />
+                        <tsresult>2017-02-18T20:00:28</tsresult>
+                        <jackpotdivisionlevelid>1</jackpotdivisionlevelid>
+                        <resultsets>
+                            <resultset>
+                                <setid>1</setid>
+                                <mainvalues>0,4,6,4,3,1</mainvalues>
+                            </resultset>
+                            <resultset>
+                                <setid>2</setid>
+                                <mainvalues>SAGITTARIUS</mainvalues>
+                            </resultset>
+                        </resultsets>
+                        <resultdivisions>
+                            <resultdivision>
+                                <levelid>1</levelid>
+                                <name>6/6 + signe astrologique</name>
+                                <shares>0</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>0</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>2</levelid>
+                                <name>6/6</name>
+                                <shares>0</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>20000</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>3</levelid>
+                                <name>5/6</name>
+                                <shares>6</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>2000</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>4</levelid>
+                                <name>4+1/6</name>
+                                <shares>6</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>202</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>5</levelid>
+                                <name>4/6</name>
+                                <shares>40</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>200</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>6</levelid>
+                                <name>3+2/6</name>
+                                <shares>3</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>25</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>7</levelid>
+                                <name>3+1/6</name>
+                                <shares>41</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>22</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>8</levelid>
+                                <name>3/6</name>
+                                <shares>400</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>20</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>9</levelid>
+                                <name>2+2/6</name>
+                                <shares>23</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>10</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>10</levelid>
+                                <name>2+1/6</name>
+                                <shares>421</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>7</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>11</levelid>
+                                <name>2/6</name>
+                                <shares>4179</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>5</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>12</levelid>
+                                <name>1+1/6</name>
+                                <shares>2127</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>4</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>13</levelid>
+                                <name>1/6</name>
+                                <shares>42221</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>2</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                            <resultdivision>
+                                <levelid>14</levelid>
+                                <name>Signe astrologique</name>
+                                <shares>21026</shares>
+                                <prizetype>FIXED</prizetype>
+                                <prizeamount>1.5</prizeamount>
+                                <totalshares xsi:nil="true" />
+                            </resultdivision>
+                        </resultdivisions>
+                        <topWinAmount>0</topWinAmount>
+                    </gamedraw>
+                </gamedraws>
+                <maindraw>
+                    <iddggamedraw>28352</iddggamedraw>
+                    <iddggameevent>28233</iddggameevent>
+                    <drawid>0</drawid>
+                    <name>Joker+</name>
+                    <rolloveramount>0</rolloveramount>
+                    <isrolldownpossible>0</isrolldownpossible>
+                    <actualjackpot>0</actualjackpot>
+                    <estimatedjackpot>400000</estimatedjackpot>
+                    <guaranteedjackpot xsi:nil="true" />
+                    <boostedjackpot xsi:nil="true" />
+                    <totalprizeamount>178750</totalprizeamount>
+                    <totalguaranteedjackpot>0</totalguaranteedjackpot>
+                    <jackpotwinners>0</jackpotwinners>
+                    <quickpickwinners xsi:nil="true" />
+                    <tsresult>2017-02-18T20:00:28</tsresult>
+                    <jackpotdivisionlevelid>1</jackpotdivisionlevelid>
+                    <resultsets>
+                        <resultset>
+                            <setid>1</setid>
+                            <mainvalues>0,4,6,4,3,1</mainvalues>
+                        </resultset>
+                        <resultset>
+                            <setid>2</setid>
+                            <mainvalues>SAGITTARIUS</mainvalues>
+                        </resultset>
+                    </resultsets>
+                    <resultdivisions>
+                        <resultdivision>
+                            <levelid>1</levelid>
+                            <name>6/6 + signe astrologique</name>
+                            <shares>0</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>0</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>2</levelid>
+                            <name>6/6</name>
+                            <shares>0</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>20000</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>3</levelid>
+                            <name>5/6</name>
+                            <shares>6</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>2000</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>4</levelid>
+                            <name>4+1/6</name>
+                            <shares>6</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>202</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>5</levelid>
+                            <name>4/6</name>
+                            <shares>40</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>200</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>6</levelid>
+                            <name>3+2/6</name>
+                            <shares>3</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>25</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>7</levelid>
+                            <name>3+1/6</name>
+                            <shares>41</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>22</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>8</levelid>
+                            <name>3/6</name>
+                            <shares>400</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>20</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>9</levelid>
+                            <name>2+2/6</name>
+                            <shares>23</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>10</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>10</levelid>
+                            <name>2+1/6</name>
+                            <shares>421</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>7</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>11</levelid>
+                            <name>2/6</name>
+                            <shares>4179</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>5</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>12</levelid>
+                            <name>1+1/6</name>
+                            <shares>2127</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>4</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>13</levelid>
+                            <name>1/6</name>
+                            <shares>42221</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>2</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                        <resultdivision>
+                            <levelid>14</levelid>
+                            <name>Signe astrologique</name>
+                            <shares>21026</shares>
+                            <prizetype>FIXED</prizetype>
+                            <prizeamount>1.5</prizeamount>
+                            <totalshares xsi:nil="true" />
+                        </resultdivision>
+                    </resultdivisions>
+                    <topWinAmount>0</topWinAmount>
+                </maindraw>
+            </gameevent>
+        </addonresult>
+    </addonresults>
+</gameresult>

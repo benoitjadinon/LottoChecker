@@ -8,11 +8,13 @@ namespace LottoChecker.Test
 	[TestFixture()]
 	public class Test
 	{
+		LottoService _lottoService;
 		IBitmapTools _bitmapTools;
 		
-		[TestFixtureSetUp] 
+		[OneTimeSetUp] 
 		public void Setup()
     	{
+			_lottoService = new LottoService();
 			_bitmapTools = new FakeBitmapTools();
 		}
 
@@ -20,7 +22,7 @@ namespace LottoChecker.Test
 		[Test()]
 		public void TestHasAWinningLine()
 		{
-			var vm = new LottoCheckerViewModel(_bitmapTools);
+			var vm = new LottoCheckerService(_lottoService, _bitmapTools);
 
 			var winningNumbers = new int[] { 18, 21, 26, 39, 42, 43 };
 			var playedLines = new List<int[]>
@@ -35,7 +37,7 @@ namespace LottoChecker.Test
 	    [Test()]
 	    public void TestHasNoWinningLine()
 	    {
-	        var vm = new LottoCheckerViewModel(_bitmapTools);
+	        var vm = new LottoCheckerService(_lottoService, _bitmapTools);
 
 	        var winningNumbers = new int[] { 18, 21, 26, 39, 42, 43 };
 	        var playedLines = new List<int[]>
@@ -50,7 +52,7 @@ namespace LottoChecker.Test
 	    [Test()]
 	    public void TestHasOnlyTwoNumbers()
 	    {
-	        var vm = new LottoCheckerViewModel(_bitmapTools);
+	        var vm = new LottoCheckerService(_lottoService, _bitmapTools);
 
 	        var winningNumbers = new int[] { 18, 21, 26, 39, 42, 43 };
 	        var playedLines = new List<int[]>
@@ -66,7 +68,7 @@ namespace LottoChecker.Test
 	    [Test()]
 	    public void TestExtractNumbers()
 	    {
-	        var vm = new LottoCheckerViewModel(_bitmapTools);
+	        var vm = new LottoCheckerService(_lottoService, _bitmapTools);
 
 	        var results = new OcrResults
 	        {
