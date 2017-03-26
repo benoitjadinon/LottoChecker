@@ -3,11 +3,11 @@
     "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
     "Microsoft.ProjectOxford.Vision": "1.0.372",
     "NETStandard.Library": "1.6.1",
-    "Newtonsoft.Json": "9.0.2-beta2",
-    "ReactiveProperty": "3.5.0",
+    "Newtonsoft.Json": "10.0.1",
+    "ReactiveProperty": "3.5.1",
     "Xam.Plugin.Connectivity": "2.3.0",
     "Xam.Plugin.Media": "2.6.3.6-beta",
-    "Xamarin.Forms": "2.3.4.192-pre2"
+    "Xamarin.Forms": "2.3.4.214-pre5"
   },
   "frameworks": {
     "netstandard1.2": {

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Reactive.Bindings;
 using System.Reactive.Linq;
+using System.Diagnostics;
 
 namespace LottoChecker
 {
@@ -21,22 +22,14 @@ namespace LottoChecker
                           ;
 
 			ScanCommand = lotteryService.Results
-										.Select(_ => true)
-										.ToAsyncReactiveCommand()
-			                            ;
-			/*IsLoading = ScanCommand.CanExecuteChangedAsObservable()
-					   .Select(_ => ScanCommand.CanExecute())
-					   .ToReadOnlyReactiveProperty();
-					   */
-			ScanCommand
-			           .Subscribe(_ => _lottoCheckerService.ScanTicketAsync(new System.Threading.CancellationToken()))
-			           ;
+						  .Select(res => res != null)
+						  .StartWith(false)
+						  .ToAsyncReactiveCommand();
 
-			/*
-			ScanCommand = _lottoCheckerService.Load().ToReactiveCommand<bool>();
-            ScanCommand.Select(b => b ? "win!" : "nope.")
-			           .Subscribe(onNext:s => Result.Value = s);
-			           */
+			ScanCommand.Subscribe(async _ => 
+			                      Result.Value = (await _lottoCheckerService.Load()) ? "win!" : "nope.");
+
+			//ScanCommand.CanExecuteChanged += (sender, e) => Debug.WriteLine("can");
 		}
 
 
@@ -44,6 +37,6 @@ namespace LottoChecker
 
 		public AsyncReactiveCommand ScanCommand { get; private set; }
 		//public ReadOnlyReactiveProperty<bool> IsLoading { get; private set; }
-		public ReactiveProperty<string> Result { get; }// = new ReactiveProperty<string>();
+		public ReactiveProperty<string> Result { get; } = new ReactiveProperty<string>("...");
 	}
 }

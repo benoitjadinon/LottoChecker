@@ -7,7 +7,7 @@
     >
     <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" >
         <Label Text="{Binding ResultsDate.Value}" />
-        <Button Text="Scan" Command="{Binding ScanCommand}" />
+        <Button Text="Scan" Command="{Binding ScanCommand, Mode=TwoWay}" />
         <Label Text="{Binding Result.Value}" />
     </StackLayout>
 </ContentPage>

@@ -44,13 +44,13 @@ namespace LottoChecker
 		}
 
 
-		internal IObservable<bool> Load()
+		public IObservable<bool> Load()
 		{
 			return Observable.FromAsync(ct => ScanTicketAsync(ct))
-							 .Where(l => l != null)
-							 .CombineLatest(_lottoService.Results,
-											(scannedNumberLines, winningNumbers)
-												=> IsTicketWinning(winningNumbers.NumberLines, scannedNumberLines)
+								 .Where(l => l != null)
+								 .CombineLatest(_lottoService.Results,
+												(scannedNumberLines, winningNumbers)
+													=> IsTicketWinning(winningNumbers.NumberLines, scannedNumberLines)
 						     );
 		}
 
