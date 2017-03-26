@@ -826,7 +826,7 @@
           "lib/portable-net45+wp80+win8+wpa81/Plugin.Connectivity.dll": {}
         }
       },
-      "Xam.Plugin.Media/2.6.3.6-beta": {
+      "Xam.Plugin.Media/2.6.3.8-beta": {
         "type": "package",
         "compile": {
           "lib/portable-net45+wp80+win8+wpa81/Plugin.Media.Abstractions.dll": {},
@@ -3939,10 +3939,10 @@
         "readme.txt"
       ]
     },
-    "Xam.Plugin.Media/2.6.3.6-beta": {
-      "sha512": "vZkEc8zmdF7ijCTM2sp0uHJ4wIoxa2D2FlJZka6XVSd2ewRjlOP6skd52Zv+Kc+zD1wV3/Fr0R68LLTkFy4cHg==",
+    "Xam.Plugin.Media/2.6.3.8-beta": {
+      "sha512": "eAgQONSFVQsG37fhGkMNLWb0BS3YEDhlbIvcpiGaEf3uRqVQNTdpL6kiNtzkplXXrck7/3Msy/QsSyEFFi1+xQ==",
       "type": "package",
-      "path": "xam.plugin.media/2.6.3.6-beta",
+      "path": "xam.plugin.media/2.6.3.8-beta",
       "files": [
         "lib/MonoAndroid10/Plugin.Media.Abstractions.dll",
         "lib/MonoAndroid10/Plugin.Media.Abstractions.pdb",
@@ -3995,7 +3995,7 @@
         "lib/wpa81/Plugin.Media/CameraCaptureUIPage.xbf",
         "lib/wpa81/Plugin.Media/Plugin.Media.xr.xml",
         "readme.txt",
-        "xam.plugin.media.2.6.3.6-beta.nupkg.sha512",
+        "xam.plugin.media.2.6.3.8-beta.nupkg.sha512",
         "xam.plugin.media.nuspec"
       ]
     },
@@ -4165,7 +4165,7 @@
       "Newtonsoft.Json >= 10.0.1",
       "ReactiveProperty >= 3.5.1",
       "Xam.Plugin.Connectivity >= 2.3.0",
-      "Xam.Plugin.Media >= 2.6.3.6-beta",
+      "Xam.Plugin.Media >= 2.6.3.8-beta",
       "Xamarin.Forms >= 2.3.4.214-pre5"
     ],
     ".NETStandard,Version=v1.2": []

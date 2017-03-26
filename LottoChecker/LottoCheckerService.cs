@@ -99,7 +99,7 @@ namespace LottoChecker
 			return
 				from region in ocrResult.Regions
 				from lines in region.Lines
-					                        where lines.Words.Length >= MinimumNumberRows
+					where lines.Words.Length >= MinimumNumberRows
 				select lines.Words.Select(word => word.Text)
 					.Where(IsNumeric)
 					.Select(v => Convert.ToInt32(v))

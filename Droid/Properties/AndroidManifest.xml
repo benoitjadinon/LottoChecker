@@ -3,5 +3,13 @@
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<application android:label="LottoChecker"></application>
+	<provider android:name="android.support.v4.content.FileProvider" 
+				android:authorities="it.dinonbeno.ja.lottochecker.fileprovider" 
+				android:exported="false" 
+				android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" 
+				android:resource="@xml/file_paths"></meta-data>
+	</provider>
 </manifest>
