@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Reactive.Bindings;
 using System.Reactive.Linq;
+using System.Diagnostics;
 
 namespace LottoChecker
 {
@@ -20,26 +21,22 @@ namespace LottoChecker
 						  .ToReadOnlyReactiveProperty("loading results...")
                           ;
 
-			ScanCommand = new AsyncReactiveCommand<bool>();
-			/*IsLoading = ScanCommand.CanExecuteChangedAsObservable()
-					   .Select(_ => ScanCommand.CanExecute())
-					   .ToReadOnlyReactiveProperty();
-					   */
-			ScanCommand.Subscribe(async _ => 
-			                      Result.Value = (await _lottoCheckerService.ScanTicketAsync(new System.Threading.CancellationToken())) ? "win!" : "nope.");
+			ScanCommand = lotteryService.Results
+						  .Select(res => res != null)
+						  .StartWith(false)
+						  .ToAsyncReactiveCommand();
 
-			/***
-			ScanCommand = _lottoCheckerService.Load().ToReactiveCommand<bool>();
-            ScanCommand.Select(b => b ? "win!" : "nope.")
-			           .Subscribe(onNext:s => Result.Value = s);
-			           */
+			ScanCommand.Subscribe(async _ => 
+			                      Result.Value = (await _lottoCheckerService.Load()) ? "win!" : "nope.");
+
+			//ScanCommand.CanExecuteChanged += (sender, e) => Debug.WriteLine("can");
 		}
 
 
 		public ReadOnlyReactiveProperty<string> ResultsDate { get; }
 
-		public AsyncReactiveCommand<bool> ScanCommand { get; private set; }
+		public AsyncReactiveCommand ScanCommand { get; private set; }
 		//public ReadOnlyReactiveProperty<bool> IsLoading { get; private set; }
-		public ReactiveProperty<string> Result { get; }// = new ReactiveProperty<string>();
+		public ReactiveProperty<string> Result { get; } = new ReactiveProperty<string>("...");
 	}
 }

@@ -43,7 +43,7 @@ namespace LottoChecker
 			_refreshSubject = new Subject<bool>();
 		}
 
-		internal IObservable<bool> Load()
+		public IObservable<bool> Load()
 		{
 			return Observable.FromAsync(ct => ScanTicketAsync(ct))
 								 .Where(l => l != null)
@@ -105,7 +105,7 @@ namespace LottoChecker
 			return
 				from region in ocrResult.Regions
 				from lines in region.Lines
-					                        where lines.Words.Length >= MinimumNumberRows
+                where lines.Words.Length >= MinimumNumberRows
 				select lines.Words.Select(word => word.Text)
 					.Where(IsNumeric)
 					.Select(v => Convert.ToInt32(v))
